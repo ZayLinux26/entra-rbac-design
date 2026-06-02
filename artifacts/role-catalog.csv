@@ -1,0 +1,11 @@
+RoleGroup,Department,Members,EHR_AppRole,Billing_AppRole,HR_AppRole,SoD_ConflictsWith,Notes
+MHP Clinical - Registered Nurses,Clinical,Emily Rodriguez; David Rodriguez,Clinician.ReadWrite,None,None,MHP Finance - Billing Specialists,Chart documentation; no prescribing; no financial access
+MHP Clinical - Physicians,Clinical,Sarah Chen; Marcus Patel,Clinician.ReadWrite + Prescribe,None,None,MHP Finance - Billing Specialists,Full clinical access plus e-prescribing; no billing (prevents upcoding)
+MHP Clinical - Lab Technicians,Clinical,(staffed on hire),LabResults.ReadWrite,None,None,MHP Finance - Billing Specialists,Scoped to lab results; cannot author clinical notes
+MHP Patient Services - Representatives,Patient Services,James Walker; Maria Lopez,Demographics.ReadWrite,Billing.ReadOnly,None,MHP Finance - Billing Specialists,Registration and scheduling; can view but not post charges
+MHP Finance - Billing Specialists,Finance,(staffed on hire),Demographics.ReadOnly,Billing.Post,None,All clinical roles; MHP Finance - Analysts,Posts charges; clinical access limited to read-only demographics (minimum necessary)
+MHP Finance - Analysts,Finance,Amanda Foster,None,Reports.Read,None,MHP Finance - Billing Specialists,Reconciliation and reporting; cannot post charges (SoD)
+MHP HR - Generalists,HR,Karen O'Brien; Daniel Garcia,None,None,HRRecords.ReadWrite,MHP Administration - Approvers,Maintains employee records
+MHP Administration - Approvers,Administration,Rachel Davis (COO),None,Reports.Read,HRRecords.ReadOnly,MHP HR - Generalists,Access-request approver; read-only HR
+MHP IT Staff (department - not a role group),IT,Jennifer Williams; Priya Sharma; Thomas Mitchell; Robert Kim,None,None,None,N/A,Administrators - excluded from workforce app roles; privileged access governed by PIM (Project 2). Robert Kim in MHP-Tier1-PIM-Admins.
+MHP Clinical Staff (department - catalog gap),Clinical,Lisa Thompson (Medical Assistant),None,None,None,N/A,Clinical-support role not covered by initial catalog; flagged for future expansion
